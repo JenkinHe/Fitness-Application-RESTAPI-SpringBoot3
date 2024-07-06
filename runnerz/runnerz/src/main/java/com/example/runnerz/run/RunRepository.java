@@ -23,6 +23,10 @@ public class RunRepository {
         return runs.stream().filter(run -> run.id()==id).findFirst();
     }
 
+    void create(Run run){
+        runs.add(run);
+    }
+
     @PostConstruct
     private void init(){
         runs.add(new Run(1,"Monday Run", LocalDateTime.now(),LocalDateTime.now().plus(30,ChronoUnit.MINUTES),3,Location.INDOOR));
