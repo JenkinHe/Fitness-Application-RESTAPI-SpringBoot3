@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Bean;
 
 import com.example.runnerz.run.Location;
 import com.example.runnerz.run.Run;
+import com.example.runnerz.run.RunRepository;
 
 
 
@@ -28,12 +29,12 @@ public class RunnerzApplication {
 
 	}
 
-	@Bean
-	CommandLineRunner runner(){
-		return args ->{
-			Run run = new Run(1,"First run", LocalDateTime.now(),LocalDateTime.now().plus(1,ChronoUnit.HOURS),5,Location.OUTDOOR);
-			log.info("Run: "+run);
-		};
-	}
+	// @Bean
+	// CommandLineRunner runner(RunRepository runRepository){
+	// 	return args ->{
+	// 		Run run = new Run(1,"First run", LocalDateTime.now(),LocalDateTime.now().plus(1,ChronoUnit.HOURS),5,Location.OUTDOOR);
+	// 		runRepository.create(run);
+	// 	};
+	// }
 
 }
